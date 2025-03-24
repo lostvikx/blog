@@ -1,6 +1,6 @@
 # Blog
 
-A static blog site to share my thoughts with the world. Contact [vikram.s.negi@proton.me](mailto:vikram.s.negi@proton.me) if you have any issues with my content.
+A static blog site to share my thoughts with the world. Contact [vikram.s.negi@proton.me](mailto:vikram.s.negi@proton.me) if you have any issues related to my content.
 
 ## Markdown Metadata
 
@@ -26,7 +26,7 @@ Note: The name of the directory should be in lowercase and hypen separated. As i
 
 ## TODO
 
-- [*] Input a blog-post directory `["article.md", "assets/*"]`
+- [x] Input a blog-post directory `["article.md", "assets/*"]`
 - [ ] Let python access the markdown metadata (post title and date)
 - [ ] Add post title and date to index.html
 - [ ] Image compression

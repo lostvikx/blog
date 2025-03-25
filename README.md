@@ -12,6 +12,7 @@ title: "Title of the Blog Post"
 author: "Vikram S. Negi"
 date: "Mar 24, 2025"
 description: "A short summary of the blog post."
+thumbnail: "assets/thumbnail.webp"
 ---
 ```
 
@@ -27,7 +28,7 @@ Note: The name of the directory should be in lowercase and hypen separated. As i
 ## TODO
 
 - [x] Input a blog-post directory `["article.md", "assets/*"]`
-- [ ] Let python access the markdown metadata (post title and date)
+- [x] Let python access the markdown metadata
 - [ ] Add post title and date to index.html
 - [ ] Image compression
 - [ ] index.html page

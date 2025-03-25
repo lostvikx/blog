@@ -2,19 +2,23 @@ import os
 import sys
 import subprocess
 import shutil
+import yaml
 
 
 def convert_markdown_to_html(markdown_file):
-    print(f"MD Path: {markdown_file}")
+    print(f"Markdown Path: {markdown_file}")
     base_dir = os.path.dirname(markdown_file)
     html_filename = os.path.basename(base_dir)
+    html_path = os.path.join("posts", f"{html_filename}.html")
 
     try:
-        subprocess.run(["pandoc", markdown_file, "-o", f"posts/{html_filename}.html", "--template=template.html"], check=True)
+        subprocess.run(["pandoc", markdown_file, "-o", html_path, "--template=template.html"], check=True)
         print("Success: Markdown to HTML conversion complete.")
     except Exception as e:
         print(f"Error: {e}")
         sys.exit(1)
+    
+    return html_path
 
 
 def check_valid_post_dir(blog_post_dir):
@@ -41,6 +45,23 @@ def copy_asset_files(blog_post_dir):
             shutil.copy(src_path, dst_path)
 
 
+def extract_md_metadata(markdown_file):
+    metadata_lines = []
+    with open(markdown_file, "r", encoding="utf-8") as file:
+        first_line = file.readline()
+        if first_line.strip() != "---":
+            print("Info: No metadata found associated with the markdown file.")
+            return {}
+
+        for line in file:
+            if line.strip() == "---":
+                break
+            metadata_lines.append(line.strip() + "\n")
+
+    md_metadata = yaml.safe_load("".join(metadata_lines)) if metadata_lines else {}
+    return md_metadata
+
+
 def main():
     blog_post_dir = sys.argv[1]
     if not os.path.isdir(blog_post_dir):
@@ -56,16 +77,20 @@ def main():
 
     markdown_file = get_markdown_file(blog_post_dir)
     if markdown_file is None:
-        print("Markdown file not found.")
+        print("Error: Markdown file not found.")
         sys.exit(1)
 
-    convert_markdown_to_html(markdown_file)
+    html_path = convert_markdown_to_html(markdown_file)
+    print(f"HTML: {html_path}")
     copy_asset_files(blog_post_dir)
+
+    md_metadata = extract_md_metadata(markdown_file)
+    print(md_metadata)
 
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python main.py <blog_post_directory>")
+        print("Usage: python main.py <path/to/blog-post-directory>")
         sys.exit(1)
     
     main()

@@ -29,6 +29,6 @@ Note: The name of the directory should be in lowercase and hypen separated. As i
 
 - [x] Input a blog-post directory `["article.md", "assets/*"]`
 - [x] Let python access the markdown metadata
-- [ ] Add post title and date to index.html
+- [x] Add post title and date to index.html
 - [ ] Image compression
 - [ ] index.html page

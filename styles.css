@@ -3,6 +3,7 @@
     --text-color: #e0e0e0;
     --text-secondary: #a2a2a2;
     --accent-color: #B26CFB;
+    --alt-dark-color: #343434;
 }
 
 * {
@@ -92,4 +93,72 @@ figcaption {
 
 em {
     color: var(--text-secondary);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin: 0.25rem 0;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+#featured-post {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    /* align-items: center;
+    justify-content: center; */
+    gap: 1.5rem;
+}
+
+#featured-post figure {
+    margin: 0;
+}
+
+#featured-post img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+#featured-post > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+#featured-post > div p {
+    margin: 0.25rem 0;
+}
+
+#featured-post > div h2 {
+    margin: 0.75rem 0;
+}
+
+#recent-posts > a {
+    color: var(--text-color);
+    display: block;
+    padding: 0.25em;
+    font-weight: bold;
+}
+
+#recent-posts > a:nth-child(even) {
+    background-color: var(--alt-dark-color);
+}
+
+#recent-posts > a > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+section:nth-child(2) {
+    margin-top: 2rem;
 }

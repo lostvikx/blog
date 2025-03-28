@@ -22,6 +22,7 @@ def convert_markdown_to_html(markdown_file: str) -> str:
 
     try:
         subprocess.run(["pandoc", markdown_file, "-o", html_path, "--template=template.html"], check=True)
+        subprocess.run(["js-beautify", "-rq", html_path], check=True)
         print("Success: Markdown to HTML conversion complete.")
     except Exception as e:
         print(f"Error: {e}")
@@ -53,9 +54,8 @@ def copy_asset_files(blog_post_dir: str) -> None:
         if os.path.isfile(src_path):
             # Image files get compressed.
             if asset.endswith((".png", ".jpg", ".jpeg", ".gif", ".webp")):
-                webp_path = os.path.splitext(dst_path)[0] + ".webp"
                 try:
-                    subprocess.run(["convert", src_path, "-quality", "80", "-strip", webp_path], check=True)
+                    subprocess.run(["convert", src_path, "-quality", "80", "-strip", dst_path], check=True)
                 except Exception as e:
                     print(f"Error: {e}")
             else:
@@ -80,7 +80,8 @@ def extract_md_metadata(markdown_file: str) -> dict:
 
 
 def add_post_to_index(meta_data: dict) -> None:
-    with open("index.html", "r", encoding="utf-8") as html:
+    html_file = "index.html"
+    with open(html_file, "r", encoding="utf-8") as html:
         soup: BeautifulSoup = BeautifulSoup(html, "html.parser")
 
     # Update Featured Post
@@ -114,8 +115,13 @@ def add_post_to_index(meta_data: dict) -> None:
         title.insert_after(date)
         recent.insert(0, new_post)
 
-    with open("index.html", "w", encoding="utf-8") as html:
+    with open(html_file, "w", encoding="utf-8") as html:
         html.write(str(soup))
+    
+    try:
+        subprocess.run(["js-beautify", "-rq", html_file], check=True)
+    except Exception as e:
+        print(f"Error: {e}")
 
 
 def main() -> None:

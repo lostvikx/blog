@@ -2,6 +2,12 @@
 
 A static blog site to share my thoughts with the world. Contact [vikram.s.negi@proton.me](mailto:vikram.s.negi@proton.me) if you have any issues related to my content.
 
+## Install
+
+```bash
+npm -g install js-beautify
+```
+
 ## Markdown Metadata
 
 Make sure all your blog posts (markdown files) have this metadata. This helps provide structure to the document.

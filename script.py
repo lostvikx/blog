@@ -51,7 +51,15 @@ def copy_asset_files(blog_post_dir: str) -> None:
         dst_path: str = os.path.join(destination_asset_dir, asset)
 
         if os.path.isfile(src_path):
-            shutil.copy(src_path, dst_path)
+            # Image files get compressed.
+            if asset.endswith((".png", ".jpg", ".jpeg", ".gif", ".webp")):
+                webp_path = os.path.splitext(dst_path)[0] + ".webp"
+                try:
+                    subprocess.run(["convert", src_path, "-quality", "80", "-strip", webp_path], check=True)
+                except Exception as e:
+                    print(f"Error: {e}")
+            else:
+                shutil.copy(src_path, dst_path)
 
 
 def extract_md_metadata(markdown_file: str) -> dict:

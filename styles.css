@@ -88,7 +88,7 @@ figure {
 
 figcaption {
     font-size: 0.75em;
-    color: var(--text-color);
+    color: var(--text-secondary);
     margin-top: 0.5rem;
 }
 

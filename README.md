@@ -31,4 +31,5 @@ Note: The name of the directory should be in lowercase and hypen separated. As i
 - [x] Let python access the markdown metadata
 - [x] Add post title and date to index.html
 - [ ] Image compression
-- [ ] index.html page
+- [x] index.html page
+- [ ] About and Contact pages

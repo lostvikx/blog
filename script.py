@@ -75,27 +75,36 @@ def add_post_to_index(meta_data: dict) -> None:
     with open("index.html", "r", encoding="utf-8") as html:
         soup: BeautifulSoup = BeautifulSoup(html, "html.parser")
 
+    # Update Featured Post
     featured = soup.find(id="featured-post")
-    featured.h2.string = meta_data["title"]
+    featured.h2.string = meta_data["title"] if len(meta_data["title"]) < 55 else meta_data["title"][:51] + "..."
 
-    if len(meta_data["description"]) < 100:
-        featured.find("p", attrs={"id": "description"}).string = meta_data["description"]
-    else:
-        featured.find("p", attrs={"id": "description"}).string = meta_data["description"][:97] + "..."
-    
+    featured.find("p", attrs={"id": "description"}).string = meta_data["description"] if len(meta_data["description"]) < 125 else meta_data["description"][:121] + "..."
+
     featured.em.string = meta_data["date"]
     featured.img["src"] = os.path.join("posts", meta_data["thumbnail"])
     featured.a["href"] = meta_data["path"]
 
+    # Insert in Recent Posts
     recent = soup.find(id="recent-posts")
-    new_post = soup.new_tag("a", attrs={"href": meta_data["path"]})
-    div = soup.new_tag("div")
-    new_post.insert(0, div)
-    title = soup.new_tag("div", string=meta_data["title"])
-    date = soup.new_tag("div", string=meta_data["date"])
-    div.insert(0, title)
-    title.insert_after(date)
-    recent.insert(0, new_post)
+    recent_posts: list[str] = recent.find_all("a")
+    post_exists: bool = False
+    for post in recent_posts:
+        if post["href"] == meta_data["path"]:
+            print("Post already exists.")
+            post_exists = True
+            break
+
+    if not post_exists:
+        new_post = soup.new_tag("a", attrs={"href": meta_data["path"]})
+        div = soup.new_tag("div")
+        new_post.insert(0, div)
+        new_post_title = meta_data["title"] if len(meta_data["title"]) < 70 else meta_data["title"][:66] + "..."
+        title = soup.new_tag("div", string=new_post_title)
+        date = soup.new_tag("div", string=meta_data["date"])
+        div.insert(0, title)
+        title.insert_after(date)
+        recent.insert(0, new_post)
 
     with open("index.html", "w", encoding="utf-8") as html:
         html.write(str(soup))
@@ -125,14 +134,13 @@ def main() -> None:
 
     md_metadata: dict = extract_md_metadata(markdown_file)
     md_metadata["path"] = html_path
-    print(md_metadata)
 
     add_post_to_index(md_metadata)
 
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python main.py <path/to/blog-post-directory>")
+        print("Usage: uv run script.py <path/to/blog-post-directory>")
         sys.exit(1)
     
     try:

@@ -18,7 +18,7 @@ def convert_markdown_to_html(markdown_file: str) -> str:
     print(f"Markdown Path: {markdown_file}")
     base_dir: str = os.path.dirname(markdown_file)
     html_filename: str = os.path.basename(base_dir)
-    html_path: str = os.path.join("posts", f"{html_filename}.html")
+    html_path: str = os.path.join("public", "posts", f"{html_filename}.html")
 
     try:
         subprocess.run(["pandoc", markdown_file, "-o", html_path, "--template=template.html"], check=True)
@@ -28,7 +28,7 @@ def convert_markdown_to_html(markdown_file: str) -> str:
         print(f"Error: {e}")
         sys.exit(1)
     
-    return html_path
+    return os.path.join("posts", f"{html_filename}.html")
 
 
 def check_valid_post_dir(blog_post_dir: str) -> bool:
@@ -45,7 +45,7 @@ def get_markdown_file(blog_post_dir: str) -> str | None:
 
 def copy_asset_files(blog_post_dir: str) -> None:
     assets_dir: str = os.path.join(blog_post_dir, "assets")
-    destination_asset_dir: str = os.path.join("posts", "assets")
+    destination_asset_dir: str = os.path.join("public", "posts", "assets")
 
     for asset in os.listdir(assets_dir):
         src_path: str = os.path.join(assets_dir, asset)
@@ -53,7 +53,7 @@ def copy_asset_files(blog_post_dir: str) -> None:
 
         if os.path.isfile(src_path):
             # Image files get compressed.
-            if asset.endswith((".png", ".jpg", ".jpeg", ".gif", ".webp")):
+            if asset.endswith((".png", ".jpg", ".jpeg", ".webp")):
                 try:
                     subprocess.run(["convert", src_path, "-quality", "80", "-strip", dst_path], check=True)
                 except Exception as e:
@@ -80,7 +80,7 @@ def extract_md_metadata(markdown_file: str) -> dict:
 
 
 def add_post_to_index(meta_data: dict) -> None:
-    html_file = "index.html"
+    html_file = os.path.join("public", "index.html")
     with open(html_file, "r", encoding="utf-8") as html:
         soup: BeautifulSoup = BeautifulSoup(html, "html.parser")
 

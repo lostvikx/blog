@@ -8,6 +8,18 @@ A static blog site to share my thoughts with the world. Contact [vikram.s.negi@p
 npm -g install js-beautify
 ```
 
+## Usage
+
+```bash
+uv run script.py "<blog-post-dir-path>"
+```
+
+## Test Server
+
+```bash
+python -m http.server
+```
+
 ## Markdown Metadata
 
 Make sure all your blog posts (markdown files) have this metadata. This helps provide structure to the document.

@@ -2,6 +2,7 @@ import os
 import sys
 import shutil
 import subprocess
+import yaml
 from pathlib import Path
 
 def copy_site_static_files(public_dir):
@@ -57,6 +58,23 @@ def generate_posts(posts_dir: str) -> Path:
     return recent_post
 
 
+def extract_metadata(post: Path) -> dict:
+    metadata_lines: list[str] = []
+    with open(str(post), "r", encoding="utf-8") as file:
+        first_line: str = file.readline()
+        if first_line.strip() != "---":
+            print("Info: No metadata found associated with the markdown file.")
+            return {}
+
+        for line in file:
+            if line.strip() == "---":
+                break
+            metadata_lines.append(line.strip() + "\n")
+
+    md_metadata: dict[str, str] = yaml.safe_load("".join(metadata_lines)) if metadata_lines else {}
+    return md_metadata
+
+
 def main() -> None:
     posts_dir: str = os.path.abspath("posts")
     print("posts/ directory:", posts_dir)
@@ -71,7 +89,12 @@ def main() -> None:
     copy_site_static_files(public_dir)
     print("Copying Complete!")
 
-    # Extract metadata from recent_post.
+    metadata: dict = extract_metadata(recent_post)
+    print(metadata)
+
+    # TODO: Add recent post metadata to featured post section in index.html
+
+    # TODO: Add all posts in the recent posts section.
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 ---
-title: "Allure of Police Body Cameras"
+title: "Allure of Police Bodycam Footage"
 author: "Vikram S. Negi"
 date: "Mar 25, 2025"
 description: "On why police bodycam videos are so exhilarating."
@@ -34,7 +34,7 @@ The chase missions are real and dangerous, filled with uncertainty and excitemen
 
 ## Criminal Psychology
 
-Why does a person commit a crime? To seek revenge, to eliminate a threat, or just for the fun of it. One can argue that most crimes that are committed are mistakes, which can range from misdemenor to felony. Some criminals regret the actions that they took, while others show no mercy.
+Why does a person commit crime? To seek revenge, to eliminate a threat, or just for the fun of it. One can argue that most crimes that are committed are mistakes, which can range from misdemenor to felony. Some criminals regret the actions that they took, while others show no mercy.
 
 Understanding how a criminal thinks can lead us to answers for the reasoning behind the act. Why was the act committed, could it have been prevented, and what can we do to ensure that this kind of situation can be avoided in the future.
 

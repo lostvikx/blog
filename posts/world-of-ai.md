@@ -1,5 +1,5 @@
 ---
-title: "World of AI"
+title: "In a World of AI Systems"
 author: "Vikram S. Negi"
 date: "Mar 18, 2025"
 description: "My thoughts on people willingly reliquishing control to AI systems."

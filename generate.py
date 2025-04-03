@@ -129,13 +129,37 @@ def add_posts_entries(posts_metadata: list[dict]) -> None:
     for metadata in posts_metadata:
         new_post = soup.new_tag("a", attrs={"href": metadata["path"]})
         div = soup.new_tag("div")
-        new_post.insert(0, div)
-        new_post_title = metadata["title"] if len(metadata["title"]) < 70 else metadata["title"][:66] + "..."
-        title = soup.new_tag("div", string=new_post_title)
+
+        title = soup.new_tag("div", string=metadata["title"] if len(metadata["title"]) < 70 else metadata["title"][:66] + "...")
         date = soup.new_tag("div", string=metadata["date"])
-        div.insert(0, title)
-        title.insert_after(date)
+
+        div.append(title)
+        div.append(date)
+
+        new_post.append(div)
         recent.insert(0, new_post)
+
+    # for metadata in posts_metadata:
+    #     new_post = soup.new_tag("a", attrs={"href": metadata["path"]})
+
+    #     fig = soup.new_tag("figure")
+    #     img = soup.new_tag("img", attrs={"src": os.path.join("posts", metadata.get("thumbnail")), "alt": "post thumbnail"})
+    #     fig.append(img)
+
+    #     div = soup.new_tag("div")
+    #     date = soup.new_tag("div", string=metadata.get("date"))
+    #     title = soup.new_tag("h3", string=metadata.get("title"))
+    #     desc = soup.new_tag("p", string=metadata.get("description"))
+
+    #     div.append(date)
+    #     div.append(title)
+    #     div.append(desc)
+
+    #     new_post.append(fig)
+    #     new_post.append(div)
+
+    #     recent.insert(0, new_post)
+
     
     with open(index_file, "w", encoding="utf-8") as html:
         html.write(str(soup))

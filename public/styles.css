@@ -58,7 +58,7 @@ main {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     margin: 1rem 0;
 }
 
@@ -152,7 +152,7 @@ em {
     margin: 0.25rem 0;
 }
 
-#recent-posts > a {
+#recent-posts>a {
     color: var(--text-color);
     display: block;
     padding: 0.25em;
@@ -160,11 +160,11 @@ em {
     text-decoration: none;
 }
 
-#recent-posts > a:nth-child(even) {
+#recent-posts>a:nth-child(even) {
     background-color: var(--alt-dark-color);
 }
 
-#recent-posts > a > div {
+#recent-posts>a>div {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -179,6 +179,14 @@ section:nth-child(2) {
     margin-top: 2rem;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     line-height: 1.2;
+}
+
+hr {
+    border-radius: 5px;
+    margin: 2rem auto;
+    border-color: var(--alt-dark-color);
 }

@@ -1,16 +1,14 @@
 #!/bin/bash
 
 # Description: Creates a directory for writing a blog post.
-# Usage: ./create_post.sh <post-dirname>
-# Example: ./create_post.sh ai-slop
+# Usage: ./create_post.sh <markdown-file-name.md>
+# Example: ./create_post.sh new-post.md
 
 # Creates the post/assets directories.
-post_dir="${1:-'post'}"
-mkdir -p "$post_dir/assets"
-cd "$post_dir"
+cd "posts/"
 
-# Creates the article.md file.
-cat << EOF > "article.md"
+# Creates the new-post.md file.
+cat << EOF > "${$1:-'new-post.md'}"
 ---
 title: "Title Goes Here"
 author: "Vikram S. Negi"
@@ -20,5 +18,5 @@ thumbnail: "assets/image_720p.webp"
 ---
 EOF
 
-echo "Start writing in '$post_dir/article.md'."
-echo "Note: All post assets go in '$post_dir/assets'."
+echo "Start writing in '$(pwd)/new-post.md'."
+echo "Note: All post assets go in '$(pwd)/assets'."

@@ -2,7 +2,7 @@
 title: "Allure of Police Body Cameras"
 author: "Vikram S. Negi"
 date: "Mar 25, 2025"
-description: ""
+description: "On why police bodycam videos are so exhilarating."
 thumbnail: "assets/83f78afda904cf3e.webp"
 ---
 
@@ -36,4 +36,8 @@ The chase missions are real and dangerous, filled with uncertainty and excitemen
 
 Why does a person commit a crime? To seek revenge, to eliminate a threat, or just for the fun of it. One can argue that most crimes that are committed are mistakes, which can range from misdemenor to felony. Some criminals regret the actions that they took, while others show no mercy.
 
-Understanding how a criminal thinks can lead us to answers for the reasoning behind the act.
+Understanding how a criminal thinks can lead us to answers for the reasoning behind the act. Why was the act committed, could it have been prevented, and what can we do to ensure that this kind of situation can be avoided in the future.
+
+Was there a purpose behind the crime, nothing in life is meaningless. Citizens in a country must feel safe or else there will be chaos and crime thrives in chaotic environment. The main mission of an officer is to keep their locality safe.
+
+

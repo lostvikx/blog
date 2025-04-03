@@ -1,28 +1,37 @@
 # Blog
 
-A static blog site to share my thoughts with the world. Contact [vikram.s.negi@proton.me](mailto:vikram.s.negi@proton.me) if you have any issues related to my content.
+* A static blog site to share my weird thoughts with the world.
+* Contact [vikram.s.negi@proton.me](mailto:vikram.s.negi@proton.me) if you have any issues related to my content.
 
 ## Install
+
+JS Beautify:
 
 ```bash
 npm -g install js-beautify
 ```
 
+uv Package Manager:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
 ## Usage
 
 ```bash
-uv run script.py "<blog-post-dir-path>"
+uv run generate.py 
 ```
 
 ## Test Server
 
 ```bash
-python -m http.server
+cd site/ && python -m http.server
 ```
 
 ## Markdown Metadata
 
-Make sure all your blog posts (markdown files) have this metadata. This helps provide structure to the document.
+Make sure all your blog posts (markdown files) have this metadata:
 
 ```yaml
 ---
@@ -34,14 +43,14 @@ thumbnail: "assets/thumbnail.webp"
 ---
 ```
 
-## Create a Post
+## Generate Site 
 
-Simply create a directory with two things:
+Script generates a directory `site/` these things:
 
-1. A markdown file with any name.
-2. A directory for assets named `assets/`.
+1. HTML files with the same name as the markdown file.
+2. Directories `posts/*.html` and `posts/assets`.
 
-Note: The name of the directory should be in lowercase and hypen separated. As it will be used as the HTML filename.
+This is our directory to serve. `site/` will contain all static files.
 
 ## TODO
 
@@ -49,5 +58,5 @@ Note: The name of the directory should be in lowercase and hypen separated. As i
 - [x] Add post title and date to index.html
 - [x] Image compression
 - [x] index.html page
-- [ ] About and Contact pages
-- [ ] Create site/ directory in setup.sh
+- [ ] About Me page 
+- [x] Create `site/` directory

@@ -43,17 +43,19 @@ cd site/ && python -m http.server
 
 ## Markdown Metadata
 
-Make sure all your blog posts (markdown files) have this metadata:
+Make sure all your blog posts (`.md` files) have this metadata:
 
 ```yaml
 ---
-title: "Title of the Blog Post"
+title: "Title Goes Here"
 author: "Vikram S. Negi"
-date: "Mar 24, 2025"
-description: "A short summary of the blog post."
-thumbnail: "assets/thumbnail.webp"
+date: "$(date +'%b %d, %Y')"
+description: "Add a description for the article."
+thumbnail: "assets/image_720p.webp"
 ---
 ```
+
+Note: Use the `create_post.sh` script to create a new blog post.
 
 ## Generate Site 
 
@@ -62,7 +64,8 @@ Script generates a directory `site/` these things:
 1. HTML files with the same name as the markdown file.
 2. Directories `posts/*.html` and `posts/assets`.
 
-This is our directory to serve. `site/` will contain all static files.
+* `site/` will contain all static files.
+* Please refer the Cloudflare Pages [docs](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/).
 
 ## TODO
 
@@ -70,5 +73,6 @@ This is our directory to serve. `site/` will contain all static files.
 - [x] Add post title and date to index.html
 - [x] Image compression
 - [x] index.html page
+- [x] Add a create_post.sh script
 - [ ] About Me page 
 - [x] Create `site/` directory

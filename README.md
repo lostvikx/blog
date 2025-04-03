@@ -5,6 +5,18 @@
 
 ## Install
 
+Pandoc:
+
+```bash
+sudo apt install pandoc
+```
+
+ImageMagick:
+
+```bash
+sudo apt install imagemagick
+```
+
 JS Beautify:
 
 ```bash

@@ -8,7 +8,8 @@
 cd "posts/"
 
 # Creates the new-post.md file.
-cat << EOF > "${$1:-'new-post.md'}"
+filename="${1:-new-post.md}"
+cat << EOF > "$filename"
 ---
 title: "Title Goes Here"
 author: "Vikram S. Negi"

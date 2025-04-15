@@ -40,4 +40,6 @@ Understanding how a criminal thinks can lead us to answers for the reasoning beh
 
 Was there a purpose behind the crime, nothing in life is meaningless. Citizens in a country must feel safe or else there will be chaos and crime thrives in chaotic environment. The main mission of an officer is to keep their locality safe.
 
+## De-Escalating the Situation
+
 

@@ -106,7 +106,7 @@ em {
     color: var(--bg-color);
     font-weight: bold;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
 #featured-post {
@@ -172,6 +172,7 @@ em {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
 }
 
 /* a:hover {

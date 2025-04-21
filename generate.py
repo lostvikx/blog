@@ -11,6 +11,8 @@ import sys
 import shutil
 import subprocess
 import yaml
+
+from datetime import datetime
 from bs4 import BeautifulSoup
 from pathlib import Path
 
@@ -66,13 +68,18 @@ def generate_posts(posts_dir: str) -> None:
 
     for file in posts:
         metadata: dict = extract_metadata(file)
+        metadata["file"] = str(file)
         posts_metadata.append(metadata)
-        if most_recent_post is None:
-            most_recent_post = file
-            add_featured_post(metadata)
 
-        file_path: str = os.path.join(posts_dir, str(file))
-        convert_html(file_path)
+    posts_metadata = sorted(posts_metadata, 
+                            key=lambda meta: datetime.strptime(meta.get("date"), "%b %d, %Y"), 
+                            reverse=True)
+    for post_meta in posts_metadata:
+        if most_recent_post is None:
+            most_recent_post = post_meta
+            add_featured_post(post_meta)
+        
+        convert_html(post_meta.get("file"))
     
     add_posts_entries(posts_metadata)
 

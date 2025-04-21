@@ -1,17 +1,10 @@
 ---
-title: "Allure of Police Bodycam Footage"
+title: "Allure of Police Bodycam Videos"
 author: "Vikram S. Negi"
-date: "Mar 25, 2025"
+date: "Apr 22, 2025"
 description: "On why police bodycam videos are so exhilarating."
 thumbnail: "assets/83f78afda904cf3e.webp"
 ---
-
-<!-- * Addictive nature
-* Real-life action film
-* Criminal psychology
-* Vulnerability of humans
-* Remaining calm under pressure
-* Interogation psychology -->
 
 Body cameras are devices used by the police to record audio and video of their interactions with people, that may be potential criminals. I have been infatuated by these footages that can be found on YouTube. These recordings are made to maintain the integrety of the events that an officer experiences during various encounters.
 
@@ -23,6 +16,8 @@ These recordings serve two main purposes:
 On YouTube these videos regularly go viral and I believe that there are a lot of things that can be learned. I have found myself watching these videos to the point of addiction. They are just so fascinating and novel to my brain, that it is not able to handle the sheer joy and the unpredictable nature of these videos.
 
 ## Realistic Action-Thriller
+
+![An officer trying to locate a mass-shooter.](assets/e0f43b46b322aa7c.webp)
 
 There is no doubt in my mind that these videos showcase real-life action sequences that feel exhilarating. From the nervousness of not knowing that what might go down to satisifcation that justice was served to the victims and their loved ones.
 
@@ -42,4 +37,6 @@ Was there a purpose behind the crime, nothing in life is meaningless. Citizens i
 
 ## De-Escalating the Situation
 
+A thing that I really admire when watching these bodycam videos is the level of calmness shown by the cops. I truely believe that these are well meaning humans who just want to keep their neighborhoods safe. Be it a tense stand-offs or a tantrum throwing young adults the officers remain composed.
 
+I hope to instill the ability to remain unfazed under pressure. I believe it to be a skill that can be learned through practice and over time. And the best way to learn this skill would require me to put myself in uncomfortable situations where it is easy to explode than to remain tranquil.

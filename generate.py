@@ -132,16 +132,29 @@ def add_posts_entries(posts_metadata: list[dict]) -> None:
 
     recent = soup.find(id="recent-posts")
     posts_metadata.reverse()
+    # print(posts_metadata[0])
 
     for metadata in posts_metadata:
         new_post = soup.new_tag("a", attrs={"href": metadata["path"]})
         div = soup.new_tag("div")
 
-        title = soup.new_tag("div", string=metadata["title"] if len(metadata["title"]) < 70 else metadata["title"][:66] + "...")
-        date = soup.new_tag("div", string=metadata["date"])
+        fig = soup.new_tag("figure")
+        img = soup.new_tag("img", attrs={"src": os.path.join("posts", metadata.get("thumbnail")), "alt": "Post Thumbnail"})
+        fig.append(img)
 
-        div.append(title)
-        div.append(date)
+        info = soup.new_tag("div", attrs={"class": "details"})
+        title = soup.new_tag("h3", string=metadata["title"] if len(metadata["title"]) < 70 else metadata["title"][:66] + "...")
+        description = soup.new_tag("div", string=metadata.get("description"), attrs={"class": "description"})
+        date = soup.new_tag("div")
+        em = soup.new_tag("em", string=metadata["date"])
+        date.append(em)
+
+        info.append(date)
+        info.append(title)
+        info.append(description)
+
+        div.append(fig)
+        div.append(info)
 
         new_post.append(div)
         recent.insert(0, new_post)

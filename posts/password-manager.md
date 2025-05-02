@@ -2,7 +2,7 @@
 title: "A Password Manager Guide"
 author: "Vikram S. Negi"
 date: "Apr 15, 2025"
-description: "Simple guide on how to set up a password store."
+description: "Simple guide on how to set up a local password store."
 thumbnail: "assets/f76334bef9a2b97b.jpg"
 ---
 

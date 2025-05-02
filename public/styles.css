@@ -36,6 +36,8 @@ nav ul {
 nav ul li {
     display: inline;
     margin: 0 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 nav ul li a {
@@ -147,7 +149,7 @@ em {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
-    padding-bottom: 1em;
+    padding: 1em;
 }
 
 em {
@@ -170,16 +172,21 @@ em {
 #recent-posts>a {
     color: var(--text-color);
     display: block;
-    padding: 0.75em;
+    /* padding: 0.75em; */
     text-decoration: none;
     border-radius: 5px;
     margin-bottom: 0.75rem;
     /* transition: 0.2s; */
+    /* background-color: var(--alt-dark-color); */
+    /* border: 1px solid var(--text-secondary); */
+}
+
+#recent-posts>a:nth-child(even) {
     background-color: var(--alt-dark-color);
 }
 
-/* #recent-posts>a:nth-child(even) {
-    background-color: var(--alt-dark-color);
+/* #recent-posts>a:nth-child(even) > div > figure {
+    order: 1;
 } */
 
 /* #recent-posts>a:hover {
@@ -297,4 +304,5 @@ blockquote {
     background-color: var(--alt-dark-color);
     padding: 0.5em 1em;
     border-radius: 5px;
+    border-left: 5px solid var(--accent-color);
 }

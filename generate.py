@@ -108,9 +108,9 @@ def add_featured_post(metadata: dict) -> None:
         soup = BeautifulSoup(html, "html.parser")
 
     featured = soup.find(id="featured-post")
-    featured.h2.string = metadata["title"] if len(metadata["title"]) < 55 else metadata["title"][:51] + "..."
 
-    featured.find("p", attrs={"id": "description"}).string = metadata["description"] if len(metadata["description"]) < 125 else metadata["description"][:121] + "..."
+    featured.h2.string = metadata.get("title")
+    featured.find("p", attrs={"id": "description"}).string = metadata.get("description")
 
     featured.em.string = metadata["date"]
     featured.img["src"] = os.path.join("posts", metadata["thumbnail"])
@@ -143,8 +143,22 @@ def add_posts_entries(posts_metadata: list[dict]) -> None:
         fig.append(img)
 
         info = soup.new_tag("div", attrs={"class": "details"})
-        title = soup.new_tag("h3", string=metadata["title"] if len(metadata["title"]) < 70 else metadata["title"][:66] + "...")
-        description = soup.new_tag("div", string=metadata.get("description"), attrs={"class": "description"})
+
+        title_string = None
+        if len(metadata.get("title")) <= 50:
+            title_string = metadata.get("title")
+        else:
+            title_string = metadata.get("title")[:47] + "..."
+
+        description_string = None
+        if len(metadata.get("description")) <= 90:
+            description_string = metadata.get("description")
+        else:
+            description_string = metadata.get("description")[:87] + "..."
+
+        title = soup.new_tag("h3", string=title_string)
+        description = soup.new_tag("div", string=description_string, attrs={"class": "description"})
+
         date = soup.new_tag("div")
         em = soup.new_tag("em", string=metadata["date"])
         date.append(em)

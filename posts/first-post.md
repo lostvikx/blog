@@ -2,7 +2,7 @@
 title: "First Blog Post"
 author: "Vikram S. Negi"
 date: "Mar 11, 2025"
-description: "This is my first ever blog post on this website. Hopefully, I continue this journey of life."
+description: "This is my first ever blog post on this website."
 thumbnail: "assets/c0b7099fa2677135.webp"
 ---
 

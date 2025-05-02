@@ -20,7 +20,7 @@ Let's look at an example like the mighty YouTube's recommendation algorithm. Her
 
 The ulimate goal here is not preserve or share knowledge around the world, but a way more simple yet terifying goal. Retain user's attention, leading to more watch time thereby increasing their advertising revenue.
 
-## Internet & AI
+## The Internet
 
 The internet was created by universities to share knowledge through disscussions, through email chains and online message boards. It was suppose to be and it certiainly can be the library of human knowledge.
 
@@ -46,10 +46,16 @@ A data scientist may wonder, where should I use these awesome pre-trained models
 
 Critical problems like medicine should not actively promote the use of AI models for treatment or diagnosis. I say this because explainability of AI is still a black-box problem. This is also bad from a research perspective, as researchers may arive at conclusions through these models, but don't understand why and how did the model produce those results.
 
-## AI-powered Tools
+### AI-powered Tools
 
 Tools like Large Language Models (LLMs) are great for writing things that feel like a chore. These can be helpful for students and professionals to be more productive, that is the only use case I believe to be the best. 
 
 We should not ignore the amount of energy in terms of compute power is required to run LLMs model on some server farm. Distilling these models to make them more compute efficient should be a top priority for big-tech.
 
 Over-relying on these tools are not such a great idea as well. A recent [research paper](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf) published by Microsoft suggests critical thinking skills of professionals have seen a statistically significant negative impact on those that regularly use LLMs.
+
+### AI Research
+
+In recent times, we have noticed an increase in money spent on AI research. But the main researchers are employeed by for-profit companies which is unlike the tradition. Universities and other research-first organizations just do not have the capital to create larges scale AI models.
+
+But, why do we need large AI models and what does it mean to be large? Well, an AI model trained on large amount of data combined with large amounts of compute power required to train them. Just the cost of doing AI research is stopping universities to proceed with it. And I predict this will not change until there is a more resource-efficient way to conduct them, perhaps a change in the underlying algorithms that don't necessarily follow the AI scaling law.

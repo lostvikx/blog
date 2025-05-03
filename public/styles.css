@@ -4,6 +4,7 @@
     --text-secondary: #afafaf;
     --accent-color: #B26CFB;
     --alt-dark-color: #272727;
+    --block-color: #343434;
     --link-color: #80C4E9;
 }
 
@@ -256,8 +257,7 @@ hr {
 }
 
 pre {
-    background-color: var(--alt-dark-color);
-    /* border: 1px solid var(--alt-dark-color); */
+    background-color: var(--block-color);
     padding: 1em;
     overflow-x: auto;
     border-radius: 5px;
@@ -278,7 +278,7 @@ pre>code {
 
 code {
     font-family: monospace, monospace;
-    background-color: var(--alt-dark-color);
+    background-color: var(--block-color);
     color: var(--text-color);
     padding: 0.2em 0.4em;
     border-radius: 5px;
@@ -301,7 +301,7 @@ article ul {
 
 blockquote {
     font-size: 0.9em;
-    background-color: var(--alt-dark-color);
+    background-color: var(--block-color);
     padding: 0.5em 1em;
     border-radius: 5px;
     border-left: 5px solid var(--accent-color);

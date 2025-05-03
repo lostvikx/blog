@@ -17,7 +17,7 @@ On YouTube these videos regularly go viral and I believe that there are a lot of
 
 ## Realistic Action-Thriller
 
-![An officer trying to locate a mass-shooter.](assets/e0f43b46b322aa7c.webp)
+![An officer trying to locate a mass-shooter.](assets/police-bodycams/public_shootout.webp)
 
 There is no doubt in my mind that these videos showcase real-life action sequences that feel exhilarating. From the nervousness of not knowing that what might go down to satisifcation that justice was served to the victims and their loved ones.
 

@@ -33,7 +33,7 @@ Generating images is a fun process that I personally enjoy doing in my free time
 
 ## Content Details
 
-![A knight resting near a campfire.](assets/277558aa38edb0c6.webp)
+![A knight resting near a campfire.](assets/first-post/resting_knight.webp)
 
 The content of these blog posts will not be fixed, meaning one can expect a dirverse range of topics like technology, history, philosophy, movies, books, and my opinions on things I care about in life.
 

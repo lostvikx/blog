@@ -17,22 +17,22 @@ from bs4 import BeautifulSoup
 from pathlib import Path
 
 
-def copy_site_static_files(public_dir):
+def copy_site_static_files(public_dir) -> None:
     for src_path in Path(public_dir).iterdir():
         dst_path = Path("site") / src_path.name
         if (src_path.is_file()) and (not dst_path.is_file()):
             shutil.copy(src_path, dst_path)
 
+    return None
 
-def copy_asset_files(posts_dir: str):
-    assets_dir = os.path.join(posts_dir, "assets")
-    dest_dir = os.path.join("site", "posts", "assets")
 
-    for asset in Path(assets_dir).iterdir():
+def copy_assets(assets_dir: Path, dest_dir: Path) -> None:
+
+    for asset in assets_dir.iterdir():
         src_path = asset
-        dst_path = Path(dest_dir) / asset.name
+        dst_path = dest_dir / asset.name
         
-        if (src_path.is_file()) and (not dst_path.is_file()):
+        if src_path.is_file():
             is_image_file: bool = asset.suffix.lower() in (".png", ".jpg", ".jpeg", ".webp")
             if is_image_file:
                 try:
@@ -42,6 +42,14 @@ def copy_asset_files(posts_dir: str):
                     print(f"Error: {e}")
             else:
                 shutil.copy(src_path, dst_path)
+        else:
+            print("Copying a directory:", asset)
+            dir_name: str = asset.name
+            dest_d: Path = Path(os.path.join("site", "posts", "assets", dir_name))
+            dest_d.mkdir()
+            copy_assets(asset, dest_d)
+
+    return None
 
 
 def convert_html(file_path: str) -> None:
@@ -196,7 +204,9 @@ def main() -> None:
     Path(os.path.join("site", "posts", "assets")).mkdir(parents=True, exist_ok=True)
 
     print("Copying static files...")
-    copy_asset_files(posts_dir)
+    assets_dir = Path(os.path.join(posts_dir, "assets"))
+    dest_dir = Path(os.path.join("site", "posts", "assets"))
+    copy_assets(assets_dir, dest_dir)
     copy_site_static_files(public_dir)
     print("Copying Complete!")
 

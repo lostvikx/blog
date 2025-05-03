@@ -147,7 +147,8 @@ def add_posts_entries(posts_metadata: list[dict]) -> None:
         div = soup.new_tag("div")
 
         fig = soup.new_tag("figure")
-        img = soup.new_tag("img", attrs={"src": os.path.join("posts", metadata.get("thumbnail")), "alt": "Post Thumbnail"})
+        img_src = os.path.join("posts", metadata.get("thumbnail"))
+        img = soup.new_tag("img", attrs={"src": img_src, "alt": "Post Thumbnail", "loading": "lazy"})
         fig.append(img)
 
         info = soup.new_tag("div", attrs={"class": "details"})

@@ -74,5 +74,6 @@ Script generates a directory `site/` these things:
 - [x] Image compression
 - [x] index.html page
 - [x] Add a create_post.sh script
-- [ ] About Me page 
+- [ ] ABOUT page 
 - [x] Create `site/` directory
+- [ ] LINKS page

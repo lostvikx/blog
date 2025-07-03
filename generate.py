@@ -89,7 +89,7 @@ def generate_posts(posts_dir: str) -> None:
         
         convert_html(post_meta.get("file"))
     
-    add_posts_entries(posts_metadata)
+    add_posts_entries(posts_metadata[1:])
 
 
 def extract_metadata(post: Path) -> dict:

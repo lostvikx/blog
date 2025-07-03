@@ -3,29 +3,13 @@
 * A static blog site to share my weird thoughts with the world.
 * Contact [vikram.s.negi@proton.me](mailto:vikram.s.negi@proton.me) if you have any issues related to my content.
 
-## Install
+## Dependencies
 
-Pandoc:
-
-```bash
-sudo apt install pandoc
-```
-
-ImageMagick:
+pandoc, ImageMagick, JS beautify, uv package manager
 
 ```bash
-sudo apt install imagemagick
-```
-
-JS Beautify:
-
-```bash
+sudo apt install pandoc imagemagick
 npm -g install js-beautify
-```
-
-uv Package Manager:
-
-```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 

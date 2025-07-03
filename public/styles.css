@@ -203,6 +203,10 @@ em {
     line-height: 1.3;
 }
 
+#recent-posts figure {
+    padding: 0.5em;
+}
+
 #recent-posts figure, #recent-posts figure img {
     margin: 0;
 }

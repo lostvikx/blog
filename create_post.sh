@@ -5,17 +5,18 @@
 # Example: ./create_post.sh new-post.md
 
 # Creates the post/assets directories.
-cd "posts/"
+cd posts/
 
 # Creates the new-post.md file.
 filename="${1:-new-post.md}"
+
 cat << EOF > "$filename"
 ---
 title: "Title Goes Here"
 author: "Vikram S. Negi"
 date: "$(date +'%b %d, %Y')"
 description: "Add a description for the article."
-thumbnail: "assets/image_720p.webp"
+thumbnail: "assets/thumbnails/image_720p.webp"
 ---
 EOF
 

@@ -3,7 +3,7 @@ title: "A Password Manager Guide"
 author: "Vikram S. Negi"
 date: "Apr 15, 2025"
 description: "Simple guide on how to set up a local password store."
-thumbnail: "assets/f76334bef9a2b97b.jpg"
+thumbnail: "assets/thumbnails/f76334bef9a2b97b.jpg"
 ---
 
 The digital world is more or less become the "real" world that most humans spend time on. And keeping your online space secure has become mission critical. One way to do exactly that is to use a password manager to store and manage all your passwords in one place.

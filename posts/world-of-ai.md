@@ -3,7 +3,7 @@ title: "In a World of AI Systems"
 author: "Vikram S. Negi"
 date: "Mar 18, 2025"
 description: "My thoughts on people willingly reliquishing control to AI systems."
-thumbnail: "assets/7e24ccc6a763a46c.png"
+thumbnail: "assets/thumbnails/7e24ccc6a763a46c.png"
 ---
 
 Algorithms are precise instructions written to solve a problem. But machine learning algorithms are a different beasts. These data-driven algorithms essentially learn the underlying patterns in the training dataset and predict the outputs.

@@ -3,7 +3,7 @@ title: "Deep Dive Into LLMs"
 author: "Vikram S. Negi"
 date: "May 02, 2025"
 description: "A deep dive into understanding how LLMs work."
-thumbnail: "assets/5afc6062d4a42efe.webp"
+thumbnail: "assets/thumbnails/5afc6062d4a42efe.webp"
 ---
 
 The following is a summary of the things I learned in a course created by Andrej Karpathy on [YouTube](https://youtu.be/7xTGNNLPyMI). This is by far the most detailed yet easy to follow teachings of how Large Language Models (LLMs) work.

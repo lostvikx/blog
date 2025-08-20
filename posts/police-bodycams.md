@@ -3,7 +3,7 @@ title: "Allure of Police Bodycam Videos"
 author: "Vikram S. Negi"
 date: "Apr 22, 2025"
 description: "On why police bodycam videos are so exhilarating."
-thumbnail: "assets/83f78afda904cf3e.webp"
+thumbnail: "assets/thumbnails/83f78afda904cf3e.webp"
 ---
 
 Body cameras are devices used by the police to record audio and video of their interactions with people, that may be potential criminals. I have been infatuated by these footages that can be found on YouTube. These recordings are made to maintain the integrety of the events that an officer experiences during various encounters.

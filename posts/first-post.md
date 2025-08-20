@@ -3,7 +3,7 @@ title: "First Blog Post"
 author: "Vikram S. Negi"
 date: "Mar 11, 2025"
 description: "This is my first ever blog post on this website."
-thumbnail: "assets/c0b7099fa2677135.webp"
+thumbnail: "assets/thumbnails/c0b7099fa2677135.webp"
 ---
 
 I have been meaning to write something for quite some time now. The hope is to create a blog site that renders markdown files to HTML. I have thought of creating a custom static site generator powered by `pandoc`.

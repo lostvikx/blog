@@ -3,7 +3,7 @@ title: "Dumbphones are the Future"
 author: "Vikram S. Negi"
 date: "Jun 16, 2025"
 description: "Just some insights on my experience of doomscrolling online."
-thumbnail: "assets/ffa48cddcb7d24b6.jpg"
+thumbnail: "assets/thumbnails/ffa48cddcb7d24b6.jpg"
 ---
 
 Nowadays doom-scrolling and content addictions have become the new normal for a lot of people. An easy way to fix this would be to elimate the suspect in question. Your smartphone.
